@@ -34,6 +34,8 @@ class AppServiceProvider extends ServiceProvider
 
             Artisan::call('migrate');
 
+            Artisan::call('storage:link');
+
             // De basis taal niet in de URL meenemen
             if (Language::where('default', 1)->first()) {
                 Config::set('localized-routes.omit_url_prefix_for_locale', Language::where('default', 1)->first()->iso);
