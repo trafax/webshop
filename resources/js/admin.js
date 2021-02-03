@@ -8,6 +8,9 @@ require('./bootstrap');
 
 window.sortable = require('jquery-ui/ui/widgets/sortable');
 
+window.Dropzone = require('dropzone');
+Dropzone.autoDiscover = false;
+
 var tinymce = require('tinymce/tinymce');
 require('tinymce/icons/default');
 require('tinymce/themes/silver');
@@ -27,8 +30,6 @@ window.sort = function()
 {
     $('.sortable').sortable({
         delay: 300,
-        axis: "y",
-        helper: 'clone',
         helper: function (e, ui) {
             ui.children().each(function () {
                 $(this).width($(this).width());

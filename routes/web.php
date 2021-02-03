@@ -61,6 +61,11 @@ Route::localized(function () {
         Route::post('filter/sort', [App\Http\Controllers\Admin\FilterController::class, 'sort'])->name('filter.sort');
         Route::post('filter/delete', [App\Http\Controllers\Admin\FilterController::class, 'delete'])->name('filter.delete');
 
+        Route::post('asset/upload', [\App\Http\Controllers\Admin\AssetController::class, 'upload'])->name('asset.upload');
+        Route::post('asset/sort', [\App\Http\Controllers\Admin\AssetController::class, 'sort'])->name('asset.sort');
+        // Route::post('admin/asset/{asset}/update', [\App\Http\Controllers\Admin\AssetController::class, 'update'])->name('asset.update');
+        Route::get('asset/{asset}/destroy', [\App\Http\Controllers\Admin\AssetController::class, 'destroy'])->name('asset.destroy');
+
         Route::get('import', [App\Http\Controllers\Admin\ImportController::class, 'index'])->name('import.index');
         Route::post('import', [App\Http\Controllers\Admin\ImportController::class, 'import'])->name('import.run');
     });

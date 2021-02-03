@@ -26,6 +26,14 @@
                 </div>
             </div>
         </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header"><strong><i class="bi bi-bag"></i> Aantal producten</strong></div>
+                <div class="card-body">
+                    Op dit moment zijn er {{ \App\Models\Product::count() }} producten actief in de webshop.
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection

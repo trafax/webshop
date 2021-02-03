@@ -55,7 +55,11 @@
                         <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="v-pills-home-tab">
                             <div class="mb-3">
                                 <label class="form-label">Afbeelding</label>
-                                <input type="file" class="form-control" id="inputGroupFile02">
+                                @include('admin.dropzone.modal_single_input', [
+                                    'name' => 'image',
+                                    'module' => 'category',
+                                    'parent_id' => $category->id
+                                ])
                             </div>
                         </div>
 

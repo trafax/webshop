@@ -26,6 +26,7 @@
                     <div class="nav flex-column col-2 nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#home" role="tab" aria-controls="v-pills-home" aria-selected="true">Algemeen</a>
                         <a class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" href="#categories" role="tab" aria-controls="v-pills-home" aria-selected="true">Categorieën</a>
+                        <a class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" href="#images" role="tab" aria-controls="v-pills-home" aria-selected="true">Afbeeldingen</a>
                         <a class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" href="#filters" role="tab" aria-controls="v-pills-home" aria-selected="true">Filters</a>
                         <a class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" href="#seo" role="tab" aria-controls="v-pills-home" aria-selected="true">Zoekmachine</a>
                     </div>
@@ -68,6 +69,15 @@
                                     @include('admin.products.partials.category', ['options' => \App\Models\Category::where('parent_id', 0)->orderBy('sort')->get(), 'depth' => 0, 'parent' => $product])
                                 </select>
                             </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            @include('admin.dropzone.multiple', [
+                                'name' => 'image',
+                                'parent_id' => $product->id,
+                                'module' => 'product',
+                                'assets' => $product->assets
+                            ])
                         </div>
 
                         <div class="tab-pane fade" id="filters" role="tabpanel" aria-labelledby="v-pills-home-tab">

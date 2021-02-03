@@ -33,4 +33,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Filter::class)->using(FilterProduct::class)->withPivot('id', 'title', 'price', 'price_extra');
     }
+
+    public function assets()
+    {
+        return $this->hasMany(Asset::class, 'parent_id', 'id')->where('module', 'product')->orderBy('sort');
+    }
 }
