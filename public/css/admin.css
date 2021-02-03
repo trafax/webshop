@@ -12898,7 +12898,16 @@ h1 i,
 }
 
 .main-side-bar {
+  height: auto !important;
+  padding-bottom: 20px;
   min-width: 300px;
+}
+
+@media (min-width: 769px) {
+  .main-side-bar {
+    position: fixed;
+    height: 100% !important;
+  }
 }
 
 .main-side-bar .list-group-item {
@@ -12922,6 +12931,12 @@ h1 i,
   margin-right: 10px;
   position: relative;
   top: -3px;
+}
+
+@media (min-width: 769px) {
+  .main-col {
+    padding-left: 330px;
+  }
 }
 
 .dropdown-toggle i {

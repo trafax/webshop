@@ -27,6 +27,12 @@ h1 {
 }
 
 .main-side-bar {
+    height: auto !important;
+    padding-bottom: 20px;
+    @media (min-width: 769px) {
+        position: fixed;
+        height: 100% !important;
+    }
     min-width: 300px;
     .list-group-item {
         background: none;
@@ -45,6 +51,12 @@ h1 {
         margin-right: 10px;
         position: relative;
         top: -3px;
+    }
+}
+
+.main-col {
+    @media (min-width: 769px) {
+        padding-left: 330px;
     }
 }
 

@@ -51,8 +51,8 @@ Route::localized(function () {
         Route::post('category/sort', [App\Http\Controllers\Admin\CategoryController::class, 'sort'])->name('category.sort');
         Route::post('category/delete', [App\Http\Controllers\Admin\CategoryController::class, 'delete'])->name('category.delete');
 
+        Route::get('product/search', [App\Http\Controllers\Admin\ProductController::class, 'index'])->name('product.search');
         Route::resource('product', App\Http\Controllers\Admin\ProductController::class);
-        Route::post('product/search', [App\Http\Controllers\Admin\ProductController::class, 'index'])->name('product.search');
         Route::post('product/sort', [App\Http\Controllers\Admin\ProductController::class, 'sort'])->name('product.sort');
         Route::post('product/delete', [App\Http\Controllers\Admin\ProductController::class, 'delete'])->name('product.delete');
 
@@ -61,6 +61,8 @@ Route::localized(function () {
         Route::post('filter/sort', [App\Http\Controllers\Admin\FilterController::class, 'sort'])->name('filter.sort');
         Route::post('filter/delete', [App\Http\Controllers\Admin\FilterController::class, 'delete'])->name('filter.delete');
 
+        Route::get('import', [App\Http\Controllers\Admin\ImportController::class, 'index'])->name('import.index');
+        Route::post('import', [App\Http\Controllers\Admin\ImportController::class, 'import'])->name('import.run');
     });
 
 });

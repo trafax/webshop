@@ -29,6 +29,7 @@
                             <li><a class="dropdown-item" href="{{ route('customer.index') }}"><i class="bi bi-people"></i> Klanten</a></li>
                             <li><a class="dropdown-item" href="{{ route('filter.index') }}"><i class="bi bi-filter-square"></i> Filters</a></li>
                             <li><a class="dropdown-item" href="{{ route('country.index') }}"><i class="bi bi-globe"></i> Landen</a></li>
+                            <li><a class="dropdown-item" href="{{ route('import.index') }}"><i class="bi bi-upload"></i> Importeren</a></li>
                         </ul>
                     </div>
                 </ul>
@@ -38,7 +39,7 @@
                     <a class="list-group-item d-flex justify-content-between align-items-center" href="{{ route('language.index') }}"><span><i class="bi bi-flag"></i> Talen</span></a>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col main-col">
                 <div class="container-fluid pt-3">
                     <div class="row border-bottom pb-3">
                         <div class="col-auto align-self-center ">

@@ -27,8 +27,7 @@
                     </select>
                 </div>
                 <div class="col-auto ms-auto">
-                    <form method="post" action="{{ route('product.search') }}">
-                        @csrf
+                    <form method="get" action="{{ route('product.search') }}">
                         <div class="input-group">
                             <input type="text" name="search" class="form-control" placeholder="Zoeken">
                             <div class="input-group-text" role="button" onclick="$(this).closest('form').submit()"><i class="bi bi-search"></i></div>
@@ -37,6 +36,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="mt-4">
+        @if (method_exists($products, 'links'))
+            {{ $products->links('admin.partials.pagination') }}
+        @endif
     </div>
 
     <div class="card mt-4">

@@ -31,15 +31,17 @@
 
                     @foreach($pivots as $pivot)
                         <div class="row mb-3">
-                            <div class="col-5">
-                                <input type="text" name="filter[{{ $filter->id }}][{{ $pivot->pivot->id }}][title]" value="{{ $pivot->pivot->title }}" class="form-control">
+                            <div class="col">
+                                <input type="text" name="filter[{{ $filter->id }}][{{ $pivot->pivot->id }}][title]" value="{{ $pivot->pivot->title }}" class="form-control" placeholder="Titel">
+                            </div>
+                            @if ($filter->selectable == 1 || $filter->multiple == 1)
+                                <div class="col-3">
+                                    <input type="text" name="filter[{{ $filter->id }}][{{ $pivot->pivot->id }}][price]" value="{{ $pivot->pivot->price }}" class="form-control" placeholder="Vaste prijs">
                                 </div>
-                            <div class="col">
-                                <input type="text" name="filter[{{ $filter->id }}][{{ $pivot->pivot->id }}][price]" value="{{ $pivot->pivot->price }}" class="form-control" placeholder="Vaste prijs">
-                            </div>
-                            <div class="col">
-                                <input type="text" name="filter[{{ $filter->id }}][{{ $pivot->pivot->id }}][price_extra]" value="{{ $pivot->pivot->price_extra }}" class="form-control" placeholder="Meerprijs">
-                            </div>
+                                <div class="col-3">
+                                    <input type="text" name="filter[{{ $filter->id }}][{{ $pivot->pivot->id }}][price_extra]" value="{{ $pivot->pivot->price_extra }}" class="form-control" placeholder="Meerprijs">
+                                </div>
+                            @endif
                             <div class="col-auto align-self-center">
                                 <a href="javascript:;" onclick="$(this).closest('.row').css('display', 'none'); $(this).closest('.row').find('input').val('');"><i class="bi bi-dash-square-dotted"></i></a>
                             </div>
@@ -47,15 +49,17 @@
                     @endforeach
 
                     <div class="row new-row mb-3">
-                        <div class="col-5">
-                            <input type="text" name="new_filter[{{ $filter->id }}][{{ $count }}][title]" value="" class="form-control">
+                        <div class="col">
+                            <input type="text" name="new_filter[{{ $filter->id }}][{{ $count }}][title]" value="" class="form-control" placeholder="Titel">
+                        </div>
+                        @if ($filter->selectable == 1 || $filter->multiple == 1)
+                            <div class="col-3">
+                                <input type="text" name="new_filter[{{ $filter->id }}][{{ $count }}][price]" value="" class="form-control" placeholder="Vaste prijs">
                             </div>
-                        <div class="col">
-                            <input type="text" name="new_filter[{{ $filter->id }}][{{ $count }}][price]" value="" class="form-control" placeholder="Vaste prijs">
-                        </div>
-                        <div class="col">
-                            <input type="text" name="new_filter[{{ $filter->id }}][{{ $count }}][price_extra]" value="" class="form-control" placeholder="Meerprijs">
-                        </div>
+                            <div class="col-3">
+                                <input type="text" name="new_filter[{{ $filter->id }}][{{ $count }}][price_extra]" value="" class="form-control" placeholder="Meerprijs">
+                            </div>
+                        @endif
                         <div class="col-auto align-self-center">
                             <a href="javascript:;" onclick="$(this).closest('.row').remove();"><i class="bi bi-dash-square-dotted"></i></a>
                         </div>

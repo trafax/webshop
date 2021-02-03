@@ -24,7 +24,7 @@
                 <div class="d-flex align-items-start">
                     <div class="nav flex-column col-2 nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#home" role="tab" aria-controls="v-pills-home" aria-selected="true">Algemeen</a>
-                        <a class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" href="#options" role="tab" aria-controls="v-pills-home" aria-selected="true">Variaties</a>
+                        {{-- <a class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" href="#options" role="tab" aria-controls="v-pills-home" aria-selected="true">Variaties</a> --}}
                     </div>
                     <div class="tab-content col-9 ps-4" id="v-pills-tabContent">
 
